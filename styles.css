@@ -1,0 +1,384 @@
+/* =======================
+   1. Font dan Global Styling
+========================== */
+
+@font-face {
+    font-family: 'Mogula';
+    src: url('fonts/Mogula.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    height: 100%; 
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;  
+    font-family: 'Mogula', sans-serif;
+    background: linear-gradient(to bottom, #DFF2EB, #ffffff);
+    color: #4A628A;
+}
+
+/* ==========================
+   2. Styling Header dan Navigasi
+========================== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #DFF2EB;
+    border-bottom: none; 
+    box-shadow: none; 
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #4A628A;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #7FB3D5;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* ==========================
+   3. Styling Bagian Utama (Main Content)
+========================== */
+
+main {
+    flex: 1; 
+    overflow: auto;
+    padding: 20px 40px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto; 
+}
+
+/* ==========================
+   4. Styling Halaman Home
+========================== */
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    min-height: 400px;
+}
+
+.intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.intro h2 {
+    font-size: 5.7em;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.intro button {
+    background: #4A628A;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.7em;
+    font-family: 'Mogula', sans-serif;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.intro button:hover {
+    background: #37527f;
+}
+
+.intro-image {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.level-up-icon {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px; 
+}
+
+/* ==========================
+   5. Styling Game Section
+========================== */
+
+.games {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; 
+    flex-wrap: nowrap; 
+    max-width: 100%; 
+}
+
+.game-option {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 10px); 
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-sizing: border-box; 
+}
+
+.game-option:hover {
+    transform: translateY(-5px);
+}
+
+.game-icon {
+    width: 200px;
+    height: 200px;
+}
+
+.game-option h3 {
+    margin: 15px 0;
+    font-size: 2.5em;
+    color: #4A628A;
+}
+
+.game-option p {
+    font-family: 'Mogula', sans-serif;
+    color: #7A9CBD;
+    font-size: 1em;
+}
+
+/* ==========================
+   6. Styling Bagian Scrambify
+========================== */
+
+#scrambify-section {
+    text-align: center;
+    padding: 20px;
+}
+
+#scrambify-section h2 {
+    font-size: 4em; 
+    font-weight: bold;
+    margin-bottom: 20px; 
+    text-align: center;
+}
+
+#scrambify-section p {
+    font-size: 1.5em; 
+    text-align: center;
+    color: #7FB3D5
+}
+
+#scrambify-section .difficulty-options button {
+    background: #4A628A;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.7em;
+    font-family: 'Mogula', sans-serif;
+    cursor: pointer;
+    margin: 20px;
+}
+
+/* ==========================
+   7. Styling Bagian Scrambify Game
+========================== */
+
+#scrambify-game-section {
+    text-align: center;
+    padding: 20px;
+}
+
+#scrambify-game-section h2 {
+    font-size: 4em; 
+    margin-bottom: 20px; 
+    text-align: center;
+}
+
+#scrambify-game-section p {
+    font-size: 1.5em; 
+    text-align: center;
+}
+
+#scrambled-letters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.letter {
+    background: #4A628A;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 2em;
+    cursor: pointer;
+    width: 50px;
+    text-align: center;
+    user-select: none;
+}
+
+#game-feedback {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #4A628A;
+}
+
+.dragging {
+    opacity: 0.5;
+}
+
+#scrambify-game-section .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 40px;  
+}
+
+#scrambify-game-section button {
+    background: #4A628A;
+    color: white;
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;  
+    font-family: 'Mogula', sans-serif; 
+    cursor: pointer;
+}
+
+#scrambify-game-section button:hover {
+    background: #37527f;
+}
+
+/* ==========================
+   8. Styling Bagian Memory Game
+========================== */
+
+#memorify-section {
+    text-align: center;
+    padding: 20px;
+}
+
+#memorify-section h2 {
+    font-size: 4em; 
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#memorify-section p {
+    font-size: 1.5em; 
+    text-align: center;
+    color: #7FB3D5
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  
+    gap: 20px;  
+    justify-content: center;  
+    align-items: center; 
+    margin: 0 auto;  
+    max-width: 800px; 
+}
+
+.memory-card {
+    width: 150px;
+    height: 100px;
+    background-color: #4A628A;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    user-select: none;
+    text-align: center;
+}
+
+
+.memory-card.flipped {
+    background-color: white;
+    color: black;
+}
+
+/* Style untuk tombol Reset Game */
+#memorify-section button {
+    background: #4A628A;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-family: 'Mogula', sans-serif;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#memorify-section button:hover {
+    background: #37527f;
+}
+
+#memory-feedback {
+    font-size: 2em;
+    color: green;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* ==========================
+   9. Styling Footer
+========================== */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;  
+}
+
+.footer-left, .footer-right {
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    padding: 0 20px;  
+}
+
+.footer-left {
+    justify-content: flex-start;
+}
+
+.footer-right {
+    justify-content: flex-end;
+    white-space: nowrap;  
+}
+
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
